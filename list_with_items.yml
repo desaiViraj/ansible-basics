@@ -1,0 +1,16 @@
+---
+- hosts: all
+  name: Usage of with_item
+  vars:
+    list:
+      - Chef
+      - Puppet
+      - Ansible
+      - Salt
+  tasks:
+    - name: store list in msg
+      debug:
+       msg: "{{ item }}"
+      with_items:
+          - "{{ list }}"
+...

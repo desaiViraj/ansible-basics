@@ -1,0 +1,10 @@
+---
+ - hosts: all
+   name: Varible
+   vars:
+    a: A
+   tasks:
+   - name: Display value
+     debug:
+       msg: "{{a}}"
+...

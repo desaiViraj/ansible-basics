@@ -1,0 +1,10 @@
+---
+ - hosts: worker1
+   name: Start Apache service
+   become: yes
+   tasks:
+    - name: Start httpd service
+      service:
+        name: httpd
+        state: started
+...

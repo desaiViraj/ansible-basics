@@ -1,0 +1,9 @@
+---
+ - hosts: worker1
+   name: Stop Apache service
+   tasks:
+    - name: Stop httpd service
+      service:
+       name: httpd
+       state: stopped
+...

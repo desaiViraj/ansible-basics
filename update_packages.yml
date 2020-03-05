@@ -1,0 +1,8 @@
+---
+- hosts: worker1
+  name: Update RPM packages
+  tasks:
+    - cron:
+       name: &quot; Weekly YUM update &quot;
+       special_time: weekly
+       job: &quote/usr/bin/yum update -y&quote;

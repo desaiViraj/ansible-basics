@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: List Files in the folder
+    command: uptime
+...

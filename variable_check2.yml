@@ -1,0 +1,13 @@
+---
+- hosts: worker1
+  name: Variable Values
+  vars:
+   message:
+      - Hi
+      - How
+      - are
+      - you
+  tasks:
+   - debug:
+      msg: "{{message}}"
+...

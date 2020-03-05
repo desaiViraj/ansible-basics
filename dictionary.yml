@@ -1,0 +1,12 @@
+---
+ - hosts: worker1
+   vars:
+     dic:
+      name: pkumar
+      place: bangalore
+  
+   tasks:
+   - name: Dictionary Variable usage
+     debug:
+       msg: "User {{ dic.name }} is from {{ dic.place }}"
+...

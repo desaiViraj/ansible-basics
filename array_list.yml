@@ -1,0 +1,14 @@
+---
+ - hosts: worker1
+   vars:
+        continents:
+          - India
+          - America
+          - 10
+          - Japan
+
+   tasks:
+   - name: Ansible List/Array Variables
+     debug:
+      msg: "{{ continents[2] }}"
+...

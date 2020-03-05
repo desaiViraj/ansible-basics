@@ -1,0 +1,8 @@
+---
+ - hosts: worker1
+   vars:
+      greetings: Hellow World
+   tasks:
+   - name: Ansible variable
+     debug:
+        msg: "{{ greetings }}"

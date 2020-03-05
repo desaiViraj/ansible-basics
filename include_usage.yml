@@ -1,0 +1,10 @@
+---
+- hosts: worker1
+  name: Usage of Include module
+  tasks:
+   - debug:
+      msg: play1
+
+- name: Include a play after another play
+  include: variable_check1.yml
+...
