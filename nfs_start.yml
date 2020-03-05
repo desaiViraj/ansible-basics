@@ -1,0 +1,10 @@
+---
+- hosts: worker1
+  name: Start NFS service
+  become: yes
+  tasks:
+    - name: sudo systemctl start nfs
+      service:      
+        name: nfs-server
+        state: started
+...

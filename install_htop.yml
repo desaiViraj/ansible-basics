@@ -1,0 +1,10 @@
+---
+- hosts: worker1
+  name: Install htop package
+  become: yes
+  tasks:
+   - name: yum install htop
+     yum:
+      name: htop
+      state: present
+...
