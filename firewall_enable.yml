@@ -1,0 +1,19 @@
+---
+- hosts: worker1
+  name: Allow rpcbind and mountd service to accept connection
+  become: yes
+  tasks:
+    - name: firewalld --permanent --add-service=rpcbind
+      firewalld:
+        service: nfs
+        permanent: yes
+        state: enabled
+    - name: firewalld --permanent --add-service=mountd
+      firewalld:
+        service: mountd
+        permanent: yes
+        state: enabled
+  post_tasks:
+    - name: Reload firewalld service
+      command: firewall-cmd --reload
+...
