@@ -1,0 +1,9 @@
+---
+- hosts: bom02
+  name: File creation
+  tasks:
+   - name: Create file
+     file:
+      name: /tmp/file2
+      state: touch
+...

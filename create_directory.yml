@@ -1,0 +1,14 @@
+---
+- hosts: bom02
+  name: Create Directory
+  become: yes
+  tasks:
+    - name: create directory
+      file:
+         path: /tmp/wenserver
+         state: directory
+         owner: root
+         group: ansadm
+         mode: 0744
+         recurse: yes
+...
