@@ -1,0 +1,9 @@
+---
+- hosts: bom02
+  name: Archive files
+  tasks:
+  - name: archive data to tmp directory
+    archive: 
+       path: /home/ansadm/data
+       dest: /tmp/data.tar
+...

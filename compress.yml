@@ -1,0 +1,11 @@
+---
+- hosts: bom02
+  name: Compress Directory
+  become: yes
+  tasks:
+    - name: compress
+      archive:
+       path: /etc/*
+       dest: /tmp/etc
+       format: tar
+...
