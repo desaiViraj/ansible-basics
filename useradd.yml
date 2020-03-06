@@ -1,0 +1,13 @@
+---
+- hosts: bom02
+  name: Add user john
+  become: yes
+  tasks:
+   - name: useradd john
+     user:
+      name: john
+      comment: temporary user
+      password: $1$pSa56TZa$CtzM7tLk7qr58h8ZLQURu.
+      shell: /bin/sh
+      uid: 1345
+...

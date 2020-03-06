@@ -1,0 +1,10 @@
+---
+- hosts: bom02
+  name: Delete user
+  become: yes
+  tasks:
+   - name: userdel <name>
+     user:
+      name: john
+      state: absent
+...  
