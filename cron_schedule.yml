@@ -1,0 +1,13 @@
+---
+- hosts: bom02
+  name: Cron Job
+  tasks:
+    - name: cron Job
+      cron:
+       job: touch /tmp/perticular
+       minute: 02
+       hour: 06
+       day: 06
+       month: mar
+       weekday: fri
+...
