@@ -1,0 +1,4 @@
+
+
+- hosts: slave2
+  name: trying to push from other branch
