@@ -1,0 +1,23 @@
+---
+- name: Looping Template
+  hosts: bom02
+  vars:
+    users:
+      user: John Snow
+      useename: jsnow
+      user: Jacky Rick
+      username: jrick
+  tasks:
+    - name: Ensure Users
+      user:
+        name: {{ item.users }}
+        username: {{ item.username }}
+        state: present
+      loop: "{{ users }}"
+    - name: Create gitignore file
+      template:
+        src:
+        dest:
+      loop: "{{ users }}"
+      become: yes
+...

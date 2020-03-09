@@ -1,0 +1,26 @@
+---
+- name: Create gitignore file in remote hosts
+  hosts: bom02
+  become: yes
+ # vars:
+ #  users:
+ #     uname: John Snow
+ #     username: jsnow
+ #     uname: Jonny Wick
+ #     username: jwick
+  tasks:
+  - name: Ensure users
+    user:
+       name: "{{ item.username }}"
+       state: present
+    with_items:
+          - { uname: John Snow, username: jsnow}
+          - { uname: Jonny Wick, username: jwick}
+  - name: Create gitignore file
+    template:
+       src: /home/ansadm/ansible-basics/templates/gitconfig.j2 
+       dest: "/home/{{ item.username }}/gitignore"
+    with_items:
+          - { uname: John Snow, username: jsnow}
+          - { uname: Jonny Wick, username: jwick}
+...

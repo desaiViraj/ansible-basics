@@ -1,0 +1,31 @@
+---
+- hosts: bom02
+  name: Create git config file for each users
+  vars:
+    users:
+      name: John Snow
+      username: jsnow
+      name: Ricky Kane
+      username: rkane
+  tasks:
+    - name: Ensure users
+      user:
+        name: {{ user.username }}
+        comment: {{ user.user }}
+        state: present
+      become: yes
+      loop: "{{ users }}"
+      loop_control:
+        loop_var: user
+    - name: create gitconfig
+      template:
+         src: /home/ansadm/ansible-basics/templates/gitignore.j2
+         dest: /home/{{ user.username }}/gitignore
+         owner: {{ user.username }}
+         group: {{ user.username }}
+         mode: 0644
+      loop: "{{ users }}"
+      loop_control:
+         loop_var: user
+      become: yes
+...
