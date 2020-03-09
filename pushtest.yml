@@ -1,0 +1,4 @@
+
+
+- hosts: slave1
+  name: trying to push and check the test
