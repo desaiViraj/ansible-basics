@@ -1,0 +1,12 @@
+---
+- name: multi user
+  hosts: bom02
+  become: yes
+  tasks:
+   - name: useradd
+     user: 
+      name: "{{ item.name }}"
+     with_items:
+      -  { name: user1 }
+      -  { name: user2 }
+

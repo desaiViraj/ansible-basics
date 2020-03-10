@@ -1,0 +1,12 @@
+---
+- name: USER ADD
+  hosts: bom02
+  become: yes
+  tasks:
+   - name: useradd
+     user:
+      name: kumar
+      comment: Pankaj Tripathi
+      password: $1$PLu51e1E$cjvRSYqafVidSboF8xT4P.
+...
+  
