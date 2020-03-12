@@ -1,0 +1,11 @@
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: Installing package
+      yum: name=tree state=present
+      when: ansible_os_family == "Amazon"
+
+    - name: Installing tree package
+      apt: name=tree state=present
+      when: ansible_os_family == "Ubuntu"
