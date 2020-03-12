@@ -1,0 +1,11 @@
+---
+- name: CRON JOB
+  hosts: bom02
+  tasks:
+   - name: Cron Job
+     cron:
+       name: create file at 12:49
+       job: touch /tmp/file{1..4}
+       hour: 12
+       minute: 49
+...

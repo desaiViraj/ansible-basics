@@ -1,0 +1,9 @@
+---
+- name: Role Example
+  hosts: bom02
+  become: yes
+  vars:
+     system_owner: user@example.com
+  roles:
+    - first_role
+...

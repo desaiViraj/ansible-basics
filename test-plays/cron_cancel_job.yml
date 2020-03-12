@@ -1,0 +1,9 @@
+---
+- name: remove cron job
+  hosts: bom02
+  tasks:
+   - name: remove cron entry using name of job
+     cron:
+      name: None
+      state: absent
+...

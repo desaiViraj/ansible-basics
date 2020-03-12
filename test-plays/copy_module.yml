@@ -1,0 +1,9 @@
+---
+- name: COPY FILES
+  hosts: bom02
+  tasks:
+   - name: copy files from one directory to another directory
+     copy:
+      src: /tmp/file*
+      dest: $HOME/data/
+...

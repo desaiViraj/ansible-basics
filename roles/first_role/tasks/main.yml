@@ -1,0 +1,10 @@
+---
+# tasks file for first_role
+- name: Display MOTD
+  template:
+    src: motd.j2
+    dest: /home/ansadm/data
+    owner: root
+    group: root
+    mode: 0444
+...
