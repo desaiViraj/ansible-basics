@@ -1,0 +1,23 @@
+---
+- name: Render data to Node machines
+  hosts: bom02
+  become: yes
+  vars:
+   server_root: /etc/httpd
+   listen: 80
+   admin: admin@example.com
+   doc_root: /var/www/html
+  tasks:
+    - name: Copy template
+      template:
+         src: /home/ansadm/ansible-basics/templates/httpd.j2
+         dest: /etc/httpd/conf/httpd.conf
+         backup: yes
+      notify: Restart httpd
+
+  handlers:
+    - name: Restart httpd
+      service:
+        name: httpd
+        state: restarted
+...      
