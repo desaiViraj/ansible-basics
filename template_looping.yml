@@ -1,0 +1,19 @@
+---
+- hosts: bom02
+  name: Template using loop
+  vars:
+    env: STAGING
+    email: admin@localhost.com
+    version: v1.1.
+    port_no: 90
+  tasks:
+    - name: Render multiple files
+      template:
+         src: /home/ansadm/ansible-playbooks/template/{{ item }}
+         dest: $HOME/data/{{ item }}
+      loop:
+        - staging04.j2
+        - staging03.j2
+        - staging02.j2
+        - staging00.j2
+...

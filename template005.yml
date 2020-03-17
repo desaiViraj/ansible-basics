@@ -1,0 +1,12 @@
+---
+- name: Copy Template
+  hosts: bom02
+  vars:
+    env: PROD001
+  tasks:
+   - name: copy files
+     template:
+       src: profile.j2
+       dest: $HOME/pro
+       backup: yes
+...

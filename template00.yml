@@ -1,0 +1,12 @@
+---
+- name: Render Template
+  hosts: bom03
+  vars:
+    env: STAGING_ENV
+  tasks:
+    - name: Copy Files
+      template:
+        src: print_00.j2
+        dest: $HOME/http.conf
+        backup: yes
+...

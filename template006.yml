@@ -1,0 +1,19 @@
+---
+- name: copy apache conf file
+  hosts: bom02
+  become: yes
+  vars:
+   admin: root@example.com
+  tasks:
+    - name: copy httpd.conf file to remote hosts
+      template:
+       src: httpd.j2
+       dest: /home/ansadm/pro/httpd.conf
+      notify: restart http
+  handlers:
+    - name: restart http
+      service:
+         name: httpd
+         state: restarted
+...
+

@@ -1,0 +1,11 @@
+---
+- name: Render Files
+  hosts: bom02
+  vars:
+    env: STAGING
+  tasks:
+    - name: copy file
+      template:
+       src: print_00.j2
+       dest: $HOME/
+...
