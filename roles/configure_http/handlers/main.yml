@@ -1,0 +1,7 @@
+---
+# handlers file for configure_http
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
+...

@@ -1,0 +1,7 @@
+---
+# tasks file for second_role
+- name: Uninstall apache
+  yum:
+    name: httpd
+    state: absent
+...
