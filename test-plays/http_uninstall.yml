@@ -1,0 +1,10 @@
+---
+- name: Uninstall Apache Package
+  hosts: bom02
+  tasks:
+   - name: Uninstall http
+     package:
+       name: httpd
+       state: absent
+     become: yes
+...
