@@ -1,0 +1,18 @@
+---
+- name: Download and Install Terraform
+  hosts: localhost
+  gather_facts: False
+  become: yes
+  vars:
+    terraform: https://releases.hashicorp.com/terraform/0.12.23/terraform_0.12.23_linux_amd64.zip
+  tasks:
+    - name: Download Terraform
+      get_url:
+         url: "{{ terraform }}"
+         dest: /tmp
+         owner: root
+    - name: Unarchive
+      unarchive:
+         src: /tmp/terraform_0.12.23_linux_amd64.zip
+         dest: /usr/bin/
+...
