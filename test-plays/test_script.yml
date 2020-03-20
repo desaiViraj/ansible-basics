@@ -1,0 +1,7 @@
+- hosts: target2
+  become: yes
+    tasks:
+        - name: install tree package
+              yum: name=tree state=present
+                    when: (ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_major_version'] == "1") or
+                                (ansible_facts['distribution'] == "Redhat" and ansible_facts['distribution_major_version'] == "2")

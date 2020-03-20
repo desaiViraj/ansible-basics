@@ -1,0 +1,18 @@
+---
+# tasks file for configure_http
+- name: Install
+  yum:
+    name: httpd
+    state: present
+
+- name: render
+  template:
+    src: httpd.j2
+    dest: /home/user/ansadm/examples
+    owner: ansadm
+    group: ansadm
+    mode: 0644
+    become: yes
+  notify:
+    - restart httpd
+...

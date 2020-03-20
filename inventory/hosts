@@ -1,13 +1,10 @@
 ###################################################
 ###############INVENTORY FILE######################
 # List of Worker Nodes
-[BOM02]
-worker1
-
 [bom02]
 worker1
 
 [bom03]
-172.31.8.152
+worker2
 
 #localhost ansible_connection=local ansible_python_interpreter=/usr/bin/env python

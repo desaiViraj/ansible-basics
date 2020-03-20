@@ -1,0 +1,9 @@
+---
+- name: read password file
+  hosts: worker2
+  vars_files:
+     - pass
+  tasks:
+    - name: read
+      command: df -Th -p {{ password }}
+...

@@ -1,0 +1,7 @@
+- name: Basic Provisioning Example
+  hosts: localhost
+  become: yes
+  gather_facts: False
+  roles:
+    - ec2-provision
+...

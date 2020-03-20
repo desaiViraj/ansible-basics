@@ -2,10 +2,6 @@
  - hosts: worker1
    name: Install Apache web server
    become: yes
-
-   tasks:
-     - name: Install httpd package
-       yum:
-        name: httpd
-        state: present
+   roles:
+     - configure_http 
 ...

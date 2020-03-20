@@ -1,0 +1,4 @@
+---
+# vars file for configure_http
+document_root: /var/www
+listen: 9090

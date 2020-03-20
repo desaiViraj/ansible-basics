@@ -1,0 +1,9 @@
+#AWS Specific Variables
+ec2_access_key: AKIASPHOHDZWCMOSFVEP
+ec2_secret_key: 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
+ec2_keypair: awsrsa
+ec2_instance_type: t2.micro
+ec2_image: ami-0d9462a653c34dab7
+ec2_region: ap-south-1
+ec2_instance_count: 1
+region: ap-south-1

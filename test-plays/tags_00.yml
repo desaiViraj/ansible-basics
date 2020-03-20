@@ -1,0 +1,25 @@
+- name: Install Mysql
+  hosts: worker1
+  become: yes
+  tasks:
+    - name: Install mysql package
+      yum:
+       name: mysql
+       state: present
+      tags:
+        - mysqlinstall
+   
+    - name: Remove mysql package
+      yum:
+       name: mysql
+       state: absent
+      tags:
+        - mysqlremove
+   
+    - name: Start service
+      service:
+       name: mysqldb
+       state: started
+      tags:
+        - servicestart
+...
