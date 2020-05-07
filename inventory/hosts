@@ -1,8 +1,8 @@
 ###################################################
 ###############INVENTORY FILE######################
 # List of Worker Nodes
-[bom02]
-worker1
+[dev]
+node01
 
 [bom03]
 worker2
