@@ -1,0 +1,13 @@
+---
+- name: Test Playbook
+  hosts: node01
+  vars:
+    var1: sshd
+  tasks:
+   - name: Check service status
+     shell: service {{var1}} status 
+     register: out
+   - debug:
+        msg:
+          - "{{out.stdout_lines}}"
+    
