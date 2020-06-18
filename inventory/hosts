@@ -2,7 +2,7 @@
 ###############INVENTORY FILE######################
 # List of Worker Nodes
 [dev]
-node01
+node01.example.com
 
 [bom03]
 worker2
