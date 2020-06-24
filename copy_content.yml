@@ -1,0 +1,6 @@
+- hosts: dev
+  tasks:
+  - name: copy file content
+    copy:
+      content: 'Hello World'
+      dest: /home/viraj/file.txt
